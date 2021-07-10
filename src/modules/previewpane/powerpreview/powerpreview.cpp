@@ -44,6 +44,15 @@ PowerPreviewModule::PowerPreviewModule() :
         std::make_unique<RegistryWrapper>(),
         L".svg\\shellex\\{E357FCCD-A995-4576-B01F-234630154E96}"));
 
+    m_fileExplorerModules.emplace_back(std::make_unique<ThumbnailProviderSettings>(
+        true,
+        L"brs-thumbnail-toggle-setting",
+        L"enable preview for Brickadia save files",
+        L"{35F2F3F7-14EB-45BF-B302-77151831BC6C}",
+        L"Brs Thumbnail Provider",
+        std::make_unique<RegistryWrapper>(),
+        L".brs\\shellex\\{E357FCCD-A995-4576-B01F-234630154E96}"));
+
     // File Explorer might be disabled if user updated from old to new settings.
     // Initialize the registry state in the constructor as PowerPreviewModule::enable/disable will not be called on startup
     update_registry_to_match_toggles();

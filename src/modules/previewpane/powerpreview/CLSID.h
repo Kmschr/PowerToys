@@ -22,9 +22,16 @@ const CLSID CLSID_SHIMActivateSvgThumbnailProvider = { 0x9C723B8C, 0x4F5C, 0x414
 // 36B27788-A8BB-4698-A756-DF9F11F64F84
 const CLSID CLSID_SvgThumbnailProvider = { 0x36B27788, 0xA8BB, 0x4698, { 0xA7, 0x56, 0xDF, 0x9F, 0x11, 0xF6, 0x4F, 0x84 } };
 
+// 2A707BF4-7026-485C-A54E-9108BE7B420E 
+const CLSID CLSID_SHIMActivateBrsThumbnailProvider = { 0x2A707BF4, 0x7026, 0x485C { 0xA5, 0x4E, 0x91, 0x08, 0xBE, 0x7B, 0x42, 0x0E };
+
+// 35F2F3F7-14EB-45BF-B302-77151831BC6C
+const CLSID CLSID_BrsThumbnailProvider = { 0x35F2F3F7, 0x14EB, 0x45BF, { 0xB3, 0x02, 0x77, 0x15, 0x18, 0x31, 0xBC, 0x6C } };
+
 // Pairs of NativeClsid vs ManagedClsid used for preview handlers.
 const std::vector<std::pair<CLSID, CLSID>> NativeToManagedClsid({
     { CLSID_SHIMActivateMdPreviewHandler, CLSID_MdPreviewHandler },
     { CLSID_SHIMActivateSvgPreviewHandler, CLSID_SvgPreviewHandler },
-    { CLSID_SHIMActivateSvgThumbnailProvider, CLSID_SvgThumbnailProvider }
-});
+    { CLSID_SHIMActivateSvgThumbnailProvider, CLSID_SvgThumbnailProvider },
+    { CLSID_SHIMActivateBrsThumbnailProvider, CLSID_BrsThumbnailProvider} 
+    });

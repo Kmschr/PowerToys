@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <Platforms>x64</Platforms>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Microsoft.PowerToys.ThumbnailHandler.Brs</RootNamespace>
+    <AssemblyName>BrsThumbnailProvider</AssemblyName>
+    <AssemblyTitle>BrsThumbnailProvider</AssemblyTitle>
+    <AssemblyDescription>PowerToys BrsPreviewHandler</AssemblyDescription>
+    <AssemblyProduct>PowerToys</AssemblyProduct>
+    <AssemblyCompany>Microsoft Corporation</AssemblyCompany>
+    <AssemblyCopyright>Copyright (C) 2020 Microsoft Corporation</AssemblyCopyright>
+    <EnableComHosting>true</EnableComHosting>
+    <Product>PowerToys</Product>
+    <Company>Microsoft Corporation</Company>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <!-- Build for windows forms -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <ProjectGuid>{037B0532-D2EA-4FCD-9DBD-CEDAA51108A5}</ProjectGuid>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Description>PowerToys BrsPreviewHandler</Description>
+    <Copyright>Copyright (C) 2020 Microsoft Corporation</Copyright>
+    <OutputPath>$(SolutionDir)$(Platform)\$(Configuration)\modules\FileExplorerPreview\</OutputPath>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <!-- Copy referenced packages to output -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <Import Project="..\..\..\Version.props" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\PreviewHandlerCommon.csproj" />
+  </ItemGroup>
+
+</Project>

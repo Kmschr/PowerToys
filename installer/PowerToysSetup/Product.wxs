@@ -483,6 +483,19 @@
             <RegistryValue Type="string" Key="InprocServer32\$(var.Version).0" Name="Assembly" Value="SvgThumbnailProvider, Version=$(var.Version).0, Culture=neutral" />
             <RegistryValue Type="string" Key="InprocServer32\$(var.Version).0" Name="Class" Value="Microsoft.PowerToys.ThumbnailHandler.Svg.SvgThumbnailProvider" />
         </RegistryKey>
+        <!-- Registry Key for Class Registration of Brs Thumbnail Provider -->
+        <RegistryKey Root="HKCR" Key="CLSID\{35F2F3F7-14EB-45BF-B302-77151831BC6C}">
+          <RegistryValue Type="string" Value="Microsoft.PowerToys.ThumbnailHandler.Brs.BrsThumbnailProvider" />
+          <RegistryValue Type="string" Name="DisplayName" Value="Brs Thumbnail Provider" />
+          <RegistryValue Type="string" Name="AppID" Value="{CF142243-F059-45AF-8842-DBBE9783DB14}" />
+          <RegistryValue Type="string" Key="Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value=""/>
+          <RegistryValue Type="string" Key="InprocServer32" Value="[FileExplorerPreviewInstallFolder]BrsThumbnailProvider.comhost.dll" />
+          <RegistryValue Type="string" Key="InprocServer32" Name="Assembly" Value="BrsThumbnailProvider, Version=$(var.Version).0, Culture=neutral" />
+          <RegistryValue Type="string" Key="InprocServer32" Name="Class" Value="Microsoft.PowerToys.ThumbnailHandler.Brs.BrsThumbnailProvider" />
+          <RegistryValue Type="string" Key="InprocServer32" Name="ThreadingModel" Value="Both" />
+          <RegistryValue Type="string" Key="InprocServer32\$(var.Version).0" Name="Assembly" Value="BrsThumbnailProvider, Version=$(var.Version).0, Culture=neutral" />
+          <RegistryValue Type="string" Key="InprocServer32\$(var.Version).0" Name="Class" Value="Microsoft.PowerToys.ThumbnailHandler.Brs.BrsThumbnailProvider" />
+        </RegistryKey>
         <!-- Registry Key for Class Registration of Markdown Preview Handler -->
         <RegistryKey Root="HKCR" Key="CLSID\{45769bcc-e8fd-42d0-947e-02beef77a1f5}">
           <RegistryValue Type="string" Value="Microsoft.PowerToys.PreviewHandler.Markdown.MarkdownPreviewHandler" />
@@ -515,6 +528,10 @@
         <!-- Add file type association for Svg Thumbnail Provider -->
         <RegistryKey Root="HKCR" Key=".svg\shellex">
             <RegistryValue Type="string" Key="{E357FCCD-A995-4576-B01F-234630154E96}" Value="{36B27788-A8BB-4698-A756-DF9F11F64F84}" />
+        </RegistryKey>
+        <!-- Add file type association for Brs Thumbnail Provider -->
+        <RegistryKey Root="HKCR" Key=".brs\shellex">
+          <RegistryValue Type="string" Key="{E357FCCD-A995-4576-B01F-234630154E96}" Value="{35F2F3F7-14EB-45BF-B302-77151831BC6C}" />
         </RegistryKey>
         <!-- Add file type association for Markdown Preview Handler -->
         <RegistryKey Root="HKCR" Key=".md\shellex">
@@ -773,6 +790,11 @@
         <File Source="$(var.BinX64Dir)modules\FileExplorerPreview\SvgThumbnailProvider.comhost.dll" />
         <File Source="$(var.BinX64Dir)modules\FileExplorerPreview\SvgThumbnailProvider.runtimeconfig.json" />
         <File Source="$(var.BinX64Dir)modules\FileExplorerPreview\SvgThumbnailProvider.deps.json" />
+        <!-- File to include dll for Brs Thumbnail Provider -->
+        <File Source="$(var.BinX64Dir)modules\FileExplorerPreview\BrsThumbnailProvider.dll" />
+        <File Source="$(var.BinX64Dir)modules\FileExplorerPreview\BrsThumbnailProvider.comhost.dll" />
+        <File Source="$(var.BinX64Dir)modules\FileExplorerPreview\BrsThumbnailProvider.runtimeconfig.json" />
+        <File Source="$(var.BinX64Dir)modules\FileExplorerPreview\BrsThumbnailProvider.deps.json" />
         <!-- Files to include dll's for Markdown Preview Handler and it's dependencies -->
         <File Source="$(var.BinX64Dir)modules\FileExplorerPreview\MarkdownPreviewHandler.dll" />
         <File Source="$(var.BinX64Dir)modules\FileExplorerPreview\MarkdownPreviewHandler.comhost.dll" />
